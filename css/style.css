@@ -58,6 +58,19 @@ body{
   padding:14px 14px calc(14px + env(safe-area-inset-bottom));
 }
 
+@media (max-width:560px){
+  #app{padding:0}
+  #frame{
+    width:100vw;
+    height:calc(var(--vh) * 100);
+    aspect-ratio:auto;
+    border-radius:0;
+    box-shadow:none;
+    border:0;
+  }
+  #ui{padding:0 0 env(safe-area-inset-bottom)}
+}
+
 .screen{
   width:min(420px, 100%);
   display:flex;
