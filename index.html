@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="color-scheme" content="light" />
+    <title>纸上小厨房：你今天是哪道菜</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div id="app" role="application" aria-label="纸上小厨房：你今天是哪道菜">
+      <div id="frame">
+        <canvas id="stage" aria-hidden="true"></canvas>
+
+        <div id="ui">
+          <section id="screen-home" class="screen">
+            <div class="paper">
+              <div class="title">纸上小厨房</div>
+              <div class="subtitle">用几道离谱的问题，捏出你此刻的食物心态</div>
+              <button id="btn-start" class="btn primary" type="button">开始测验</button>
+              <div class="note">离线运行 · 用 serve.cmd 打开（localhost）</div>
+            </div>
+          </section>
+
+          <section id="screen-quiz" class="screen hidden">
+            <div class="paper">
+              <div class="hud">
+                <div id="progress" class="progress" aria-live="polite"></div>
+                <div class="hud-actions">
+                  <button id="btn-prev" class="btn" type="button">上一题</button>
+                  <button id="btn-reset" class="btn" type="button">重来</button>
+                </div>
+              </div>
+              <div id="question" class="question" aria-live="polite"></div>
+              <div id="options" class="options" role="group" aria-label="选项"></div>
+            </div>
+          </section>
+
+          <section id="screen-result" class="screen hidden">
+            <div class="paper">
+              <img id="result-food" alt="食物插画" />
+              <div class="result-title">
+                <span class="result-title-prefix">你是——</span>
+                <span id="result-name" class="result-name"></span>
+              </div>
+              <div id="result-sections" class="sections"></div>
+            </div>
+          </section>
+
+          <div id="error" class="error hidden">哎呀，出错了，请重启试试吧~</div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>
